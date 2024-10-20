@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HoroscApp</string>
+    <string name="horoscope">Horoscopo</string>
+    <string name="palmistry">Quiromancia</string>
+    <string name="luck">Fortuna</string>
+    <string name="hello_blank_fragment">Hola fragmento blanco</string>
+</resources>
