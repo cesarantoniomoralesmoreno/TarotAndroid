@@ -1,17 +1,19 @@
-package com.example.horoscapp.ui.home
+package com.example.horoscapp.ui.horoscope
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.horoscapp.databinding.FragmentHoroscopeBinding
-import com.example.horoscapp.ui.horoscope.HoroscopeViewModel
 
 import com.example.horoscapp.ui.horoscope.adapter.HoroscopeAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,20 +39,22 @@ class HoroscopeFragment : Fragment() {
     }
 
     private fun initList() {
-        horoscopeAdapter = HoroscopeAdapter()
+        horoscopeAdapter = HoroscopeAdapter(onItemSelected = { Toast.makeText(context, getString(it.name),Toast.LENGTH_LONG).show()})
 
         binding.rvHoroscope.apply {
-            layoutManager = LinearLayoutManager(context)
+            //layoutManager = LinearLayoutManager(context)//Para que se vea una lista
+            layoutManager = GridLayoutManager(context,2)//Para que se vean 2 columnas
             adapter = horoscopeAdapter
         }
     }
 
 
     private fun initUIState() {
-        lifecycleScope.launch {
+        lifecycleScope.launch {//Coroutine
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                horoscopeViewModel.horoscope.collect {
+                horoscopeViewModel.horoscope.collect {//Subscribirse al horoscope
                     //CAMBIOS EN HOROSCOPE
+                    Log.i("Este es el resultado",it.toString())
                     horoscopeAdapter.updateList(it)
                 }
             }

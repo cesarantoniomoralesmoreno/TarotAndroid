@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/horoscopeFragment"
-        android:name="com.example.horoscapp.ui.home.horoscope.HoroscopeFragment"
+        android:name="com.example.horoscapp.ui.horoscope.HoroscopeFragment"
         android:label="fragment_horoscope"
         tools:layout="@layout/fragment_horoscope" />
     <fragment
         android:id="@+id/palmestryFragment"
-        android:name="com.example.horoscapp.ui.palmestry.PalmestryFragment"
+        android:name="com.example.horoscapp.ui.palmistry.PalmistryFragment"
         android:label="fragment_palmestry"
-        tools:layout="@layout/fragment_palmestry" />
+        tools:layout="@layout/fragment_palmistry" />
     <fragment
         android:id="@+id/luckFragment"
-        android:name="com.example.horoscapp.ui.home.luck.LuckFragment"
+        android:name="com.example.horoscapp.ui.luck.LuckFragment"
         android:label="fragment_luck"
         tools:layout="@layout/fragment_luck" />
 </navigation>

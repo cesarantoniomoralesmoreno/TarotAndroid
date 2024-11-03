@@ -5,4 +5,10 @@
     <string name="palmistry">Quiromancia</string>
     <string name="luck">Fortuna</string>
     <string name="hello_blank_fragment">Hola fragmento blanco</string>
+    <string name="taurus">Tauro</string>
+    <string name="gemini">Geminis</string>
+    <string name="sagittarius">Sagitario</string>
+    <string name="capricorn">Capricornio</string>
+    <string name="aquarius">Acuario</string>
+    <string name="pisces">Picis</string>
 </resources>
