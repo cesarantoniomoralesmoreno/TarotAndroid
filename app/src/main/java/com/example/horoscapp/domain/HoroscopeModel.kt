@@ -1,4 +1,16 @@
-package com.example.horoscapp.domain.model
+package com.example.horoscapp.domain
 
-class HoroscopeModel {
+enum class HoroscopeModel {
+    Aries,
+    Taurus,
+    Gemini,
+    Cancer,
+    Leo,
+    Virgo,
+    Libra,
+    Scorpio,
+    Sagittarius,
+    Capricorn,
+    Aquarius,
+    Pisces
 }

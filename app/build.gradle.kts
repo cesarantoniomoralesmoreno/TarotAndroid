@@ -4,6 +4,8 @@ plugins {
     id("org.jetbrains.kotlin.kapt")
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs.kotlin")
+
+
 }
 
 android {
@@ -54,6 +56,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.activity)
     val navVersion = "2.7.1"
     val cameraVersion = "1.2.3"
 

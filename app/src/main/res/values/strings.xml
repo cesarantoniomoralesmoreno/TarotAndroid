@@ -5,9 +5,9 @@
     <string name="horoscope">Horoscope</string>
     <string name="palmistry">Palmistry</string>
     <string name="luck">Luck</string>
-    
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
+
 
     <!--Horoscope-->
     <string name="aries" translatable="false">Aries</string>
