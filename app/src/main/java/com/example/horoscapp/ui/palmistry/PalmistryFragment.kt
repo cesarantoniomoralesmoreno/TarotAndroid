@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.horoscapp.R
 import com.example.horoscapp.databinding.FragmentPalmestryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class PalmestryFragment : Fragment() {
+@AndroidEntryPoint
+class PalmistryFragment : Fragment() {
 
     private var _binding:FragmentPalmestryBinding? = null
     private val binding get() = _binding!!
