@@ -1,4 +1,4 @@
-package com.example.horoscapp.domain
+package com.example.horoscapp.domain.model
 
 enum class HoroscopeModel {
     Aries,

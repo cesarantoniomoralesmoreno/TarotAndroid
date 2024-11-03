@@ -1,4 +1,16 @@
 package com.example.horoscapp.data
 
-class RepositoryImpl {
+import android.util.Log
+import com.example.horoscapp.data.network.HoroscopeApiService
+import com.example.horoscapp.domain.Repository
+import com.example.horoscapp.domain.model.PredictionModel
+import javax.inject.Inject
+
+class RepositoryImpl @Inject constructor(private val apiService: HoroscopeApiService) : Repository {
+    override suspend fun getPrediction(sign: String): PredictionModel? {
+        return runCatching { apiService.getHoroscope(sign) }
+            .mapCatching { it.toDomain() }
+            .onFailure { Log.i("Falla", "Ha ocurrido un error: ${it.message}") }
+            .getOrNull()
+    }
 }

@@ -1,4 +1,8 @@
 package com.example.horoscapp.domain.model
 
-class PredictionModel {
-}
+import com.google.gson.annotations.SerializedName
+
+data class PredictionModel(
+    val horoscope: String,
+    val sign: String
+)
