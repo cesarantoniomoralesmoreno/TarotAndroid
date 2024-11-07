@@ -18,6 +18,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.horoscapp.R
 import com.example.horoscapp.databinding.FragmentLuckBinding
 import com.example.horoscapp.domain.model.HoroscopeModel
+import com.example.horoscapp.ui.core.OnSwipeTouchListener
 import com.example.horoscapp.ui.luck.LuckFragmentDirections
 import com.example.horoscapp.ui.model.LuckyModel
 import com.example.horoscapp.ui.providers.RandomCardProvider
@@ -64,11 +65,24 @@ class LuckFragment : Fragment() {
         startActivity(shareIntent)
     }
 
+    @SupressLint("ClickableViewAccessibility")
     private fun initListeners() {
-        binding.ivRoulette.setOnClickListener { spinRoulette() }
+        //binding.ivRoulette.setOnClickListener { spinRoulette() }
+        binding.ivRoulette.setOnTouchListener(object: OnSwipeTouchListener(requireContext()){
+            override fun onSwipeRight() {
+                spinRoulette()
+
+            }
+            override fun onSwipeLeft(){
+                spinRoulette()
+            }
+        })
     }
 
-    private fun spinRoulette() {
+
+annotation class SupressLint(val value: String)
+
+private fun spinRoulette() {
         val random = Random.Default
         val degrees = random.nextInt(1140) + 360 // 4 vueltas
         val animator = ObjectAnimator.ofFloat(binding.ivRoulette, View.ROTATION, 0f, degrees.toFloat())
