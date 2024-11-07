@@ -14,16 +14,23 @@
             android:id="@+id/action_horoscopeFragment_to_horoscopeDetailActivity"
             app:destination="@id/horoscopeDetailActivity" />
     </fragment>
+
     <fragment
         android:id="@+id/palmestryFragment"
         android:name="com.example.horoscapp.ui.palmistry.PalmistryFragment"
         android:label="fragment_palmestry"
         tools:layout="@layout/fragment_palmistry" />
+
     <fragment
         android:id="@+id/luckFragment"
         android:name="com.example.horoscapp.ui.luck.LuckFragment"
         android:label="fragment_luck"
-        tools:layout="@layout/fragment_luck" />
+        tools:layout="@layout/fragment_luck" >
+        <action
+            android:id="@+id/action_luckFragment_to_horoscopeDetailActivity"
+            app:destination="@id/horoscopeDetailActivity" />
+    </fragment>
+
     <activity
         android:id="@+id/horoscopeDetailActivity"
         android:name="com.example.horoscapp.ui.detail.HoroscopeDetailActivity"

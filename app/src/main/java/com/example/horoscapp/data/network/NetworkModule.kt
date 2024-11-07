@@ -1,5 +1,6 @@
 package com.example.horoscapp.data.network
 
+import com.example.horoscapp.BuildConfig
 import com.example.horoscapp.data.RepositoryImpl
 import com.example.horoscapp.data.core.interceptors.AuthInterceptor
 import com.example.horoscapp.domain.Repository
@@ -17,11 +18,10 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
     @Provides
-    @Singleton //con esto evitamos que si la clase ya ha sido creada la vuelva a crear y reutilice la ya existente
+    @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        return Retrofit
-            .Builder()
-            .baseUrl("BASE_URL")
+        return Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL) // Aquí usamos la URL base configurada en build.gradle
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -29,22 +29,21 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(authInterceptor: AuthInterceptor):OkHttpClient{
-
-        val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)//Podemos obviar esto pasando todo al addInterceptor
-       return OkHttpClient.Builder()
-           .addInterceptor(interceptor)
-           .addInterceptor(authInterceptor)
-           .build()
+    fun provideOkHttpClient(authInterceptor: AuthInterceptor): OkHttpClient {
+        val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        return OkHttpClient.Builder()
+            .addInterceptor(interceptor)
+            .addInterceptor(authInterceptor)
+            .build()
     }
 
-
     @Provides
-    fun provideHoroscopeApiService(retrofit: Retrofit):HoroscopeApiService{
+    fun provideHoroscopeApiService(retrofit: Retrofit): HoroscopeApiService {
         return retrofit.create(HoroscopeApiService::class.java)
     }
+
     @Provides
-    fun provideRepository(apiService: HoroscopeApiService):Repository{
+    fun provideRepository(apiService: HoroscopeApiService): Repository {
         return RepositoryImpl(apiService)
     }
 }

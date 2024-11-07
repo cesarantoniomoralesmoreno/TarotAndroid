@@ -11,4 +11,6 @@
     <string name="capricorn">Capricornio</string>
     <string name="aquarius">Acuario</string>
     <string name="pisces">Picis</string>
+    <string name="roulette_image_description">Descripcion</string>
+    <string name="share">Compartir</string>
 </resources>
