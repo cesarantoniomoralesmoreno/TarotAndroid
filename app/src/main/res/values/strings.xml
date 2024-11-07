@@ -24,5 +24,42 @@
     <string name="pisces">Pisces</string>
     <string name="roulette_image_description">Description</string>
     <string name="reverse_card_image_description" translatable="false">ReverseCardDescription\n</string>
-    <string name="share">Share\n</string>
+
+
+
+    <!--    Luck-->
+    <string name="share" translatable="false">Share</string>
+
+    <string name="luck_0" translatable="false">"A new opportunity will bring unexpected success your way."</string>
+    <string name="luck_1" translatable="false">"You'll meet someone who will change your life for the better."</string>
+    <string name="luck_2" translatable="false">"An exciting journey awaits you in the near future."</string>
+    <string name="luck_3" translatable="false">"A creative project will lead to recognition and fulfillment."</string>
+    <string name="luck_4" translatable="false">"You'll overcome a significant challenge and emerge stronger."</string>
+    <string name="luck_5" translatable="false">"Financial abundance is on the horizon; stay patient."</string>
+    <string name="luck_6" translatable="false">"A long-lost friend will reconnect with you soon."</string>
+    <string name="luck_7" translatable="false">"A big decision will lead to personal growth and happiness."</string>
+    <string name="luck_8" translatable="false">"A dream you've had for years will finally come true."</string>
+    <string name="luck_9" translatable="false">"Trust your intuition; it will guide you toward success."</string>
+    <string name="luck_10" translatable="false">"A hidden talent will emerge, bringing new opportunities."</string>
+    <string name="luck_11" translatable="false">"A change in your routine will lead to unexpected adventures."</string>
+    <string name="luck_12" translatable="false">"Someone from your past will play a significant role in your future."</string>
+    <string name="luck_13" translatable="false">"A serendipitous encounter will lead to a deep and lasting connection."</string>
+    <string name="luck_14" translatable="false">"You'll receive a surprising gift that brings joy to your life."</string>
+    <string name="luck_15" translatable="false">"An unexpected journey will lead to personal transformation."</string>
+    <string name="luck_16" translatable="false">"Your hard work will pay off with a well-deserved reward."</string>
+    <string name="luck_17" translatable="false">"A new chapter in your life will begin, filled with possibilities."</string>
+    <string name="luck_18" translatable="false">"Trust in the timing of events; everything happens for a reason."</string>
+    <string name="luck_19" translatable="false">"Embrace the change coming your way; it will lead to great things."</string>
+    <string name="luck_20" translatable="false">"A stroke of luck will lead you toward a path of prosperity."</string>
+    <string name="luck_21" translatable="false">"A unexpected opportunity will knock on your door; be ready to seize it."</string>
+    <string name="luck_22" translatable="false">"A period of personal growth and self-discovery is on the horizon."</string>
+    <string name="luck_23" translatable="false">"You'll find inspiration in the most unlikely of places."</string>
+    <string name="luck_24" translatable="false">"A new friendship will bring laughter and joy into your life."</string>
+    <string name="luck_25" translatable="false">"Suscríbete a AristiDevs en Youtube."</string>
+    <string name="luck_26" translatable="false">"An important decision will lead to a brighter future."</string>
+    <string name="luck_27" translatable="false">"A long-held wish will finally manifest itself."</string>
+    <string name="luck_28" translatable="false">"You'll discover a new passion that ignites your soul."</string>
+    <string name="luck_29" translatable="false">"A challenge you face now will become a stepping stone to success."</string>
+    <string name="luck_30" translatable="false">"Unexpected travel plans will broaden your horizons."</string>
+    <string name="luck_31" translatable="false">"A surprising twist of fate will bring unexpected blessings."</string>
 </resources>

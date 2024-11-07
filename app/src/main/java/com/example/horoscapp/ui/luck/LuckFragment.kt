@@ -1,6 +1,7 @@
 package com.example.horoscapp.ui.luck
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,7 +19,10 @@ import com.example.horoscapp.R
 import com.example.horoscapp.databinding.FragmentLuckBinding
 import com.example.horoscapp.domain.model.HoroscopeModel
 import com.example.horoscapp.ui.luck.LuckFragmentDirections
+import com.example.horoscapp.ui.model.LuckyModel
+import com.example.horoscapp.ui.providers.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 import kotlin.random.Random
 
 @AndroidEntryPoint
@@ -27,6 +31,9 @@ class LuckFragment : Fragment() {
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
 
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
@@ -34,6 +41,27 @@ class LuckFragment : Fragment() {
 
     private fun initUI() {
         initListeners()
+        preparePrediction()
+    }
+
+    private fun preparePrediction() {
+        val currentLuck = randomCardProvider.getLucky()
+        currentLuck?.let {luck ->
+            val currentPrediction = getString(luck.text)
+            binding.tvLucky.text = currentPrediction
+            binding.ivLuckyCard.setImageResource(luck.image)
+            binding.tvShare.setOnClickListener{shareResult(currentPrediction)}
+        }
+    }
+
+    private fun shareResult(prediction:String) {
+        val sendIntent:Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT,prediction)
+            type= "text/plain"
+        }
+        val shareIntent = Intent.createChooser(sendIntent,null)
+        startActivity(shareIntent)
     }
 
     private fun initListeners() {
@@ -65,6 +93,7 @@ class LuckFragment : Fragment() {
                 // No se necesita acción aquí
             }
         })
+
         binding.reverse.startAnimation(slideUpAnimation)
     }
 
@@ -100,11 +129,7 @@ class LuckFragment : Fragment() {
                 binding.preview.isVisible = false
                 binding.prediction.isVisible = true
             }
-
-            override fun onAnimationRepeat(p0: Animation?) {
-
-            }
-
+            override fun onAnimationRepeat(p0: Animation?) {}
         })
 
         binding.preview.startAnimation(appearAnimation)
