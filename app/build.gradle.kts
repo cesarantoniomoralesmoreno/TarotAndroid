@@ -60,6 +60,8 @@ android {
 
 dependencies {
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.room.ktx)
+    testImplementation(libs.junit.junit)
     val navVersion = "2.7.1"
     val cameraVersion = "1.2.3"
 
